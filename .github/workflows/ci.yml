@@ -29,8 +29,12 @@ jobs:
            - name: "List dependencies"
              run: ls             
 
-           - name: "Run tests"
+           - name: "Run lint"
+             run: npm run lint
+             
+           - name: "Run tests" # If the all test are passed the n it goes run build otherwise it fails.
              run: npm test
 
            - name: "Run build"
              run: npm run build
+           
