@@ -11,6 +11,13 @@ jobs:
 
         steps:
            - name: "Setup Node JS"
-             uses: actions/setup-node@v4
-             with:
-              node-version: '22'
+             uses: actions/setup-node@v4 # 'uses' property: this helps us to define a github action and 'actions/setup-node@v4' this is a predefined action
+             with: # 'with' property is like a variable for 'uses' property
+               node-version: '22'
+      
+           - name: "Check node version"
+             run: node --version # 'run' property is used to run linux command
+           
+           - name: "Clone the repository"
+             uses: actions/checkout@v2
+             
